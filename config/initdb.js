@@ -1,4 +1,5 @@
 const pool = require('./db');
+require('dotenv').config({path: './data/db.env'});
 
 const initDb = async () => {
     try {

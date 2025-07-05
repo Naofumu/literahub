@@ -1,12 +1,12 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const app = express();
 const bookRoutes = require('./routes/book');
 const userRoutes = require('./routes/user');
+require('./config/initdb');
 
-const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use('/api/books', bookRoutes);
 app.use('/api/users', userRoutes);
